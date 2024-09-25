@@ -74,7 +74,7 @@ public final class HTTPFetcher: Fetcher, Loggable {
                     request: request,
                     consume: { data, _ in consume(data) }
                 )
-                completion(result.map { _ in }.mapError { ResourceError.wrap($0) })
+                await completion(result.map { _ in }.mapError { ResourceError.wrap($0) })
             })
         }
 

@@ -33,7 +33,7 @@ public extension HTTPClient {
             consume: { chunk, _ in data.append(chunk) }
         )
 
-        return response
+        return await response
             .map {
                 var response = $0
                 response.body = data
